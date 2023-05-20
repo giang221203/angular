@@ -6,19 +6,32 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CategoryComponent } from './category/category.component';
+import { AboutComponent } from './pages/about/about.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    CategoryComponent,
+    AboutComponent,
+    RegisterComponent,
+    ServicesComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
