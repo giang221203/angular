@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -13,8 +13,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { LayoutComponent } from './layout/layout/layout.component';
+import { ProductComponent } from './pages/admin/product/product.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AboutComponent,
     RegisterComponent,
     ServicesComponent,
-    NotfoundComponent
+    NotfoundComponent,
+      LayoutAdminComponent,
+    LayoutComponent,
+    HeaderAdminComponent,
+    SidebarAdminComponent,
+    ProductComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

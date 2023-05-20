@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { User } from '../cammon/user';
-import { Product } from '../cammon/product';
-import products from '../datas/product';
+import { User } from '../../cammon/user';
+import { Product } from '../../cammon/product';
+import products from '../../datas/product';
 
 @Component({
   selector: 'app-home',
