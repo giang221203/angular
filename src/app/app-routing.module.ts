@@ -11,6 +11,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProductComponent } from './pages/admin/product/product.component';
 import { LayoutComponent } from './layout/layout/layout.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   // Ứng dụng phía máy chủ: (admin)
@@ -27,6 +28,7 @@ children:[
   children:[
     {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home',component:HomeComponent},
+    {path:'product/:id',component:ProductDetailComponent},
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
   ]

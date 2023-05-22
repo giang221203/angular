@@ -20,6 +20,8 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { ProductComponent } from './pages/admin/product/product.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,11 +40,13 @@ import { HeaderAdminComponent } from './components/header-admin/header-admin.com
     SidebarAdminComponent,
     ProductComponent,
     DashboardComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

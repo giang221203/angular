@@ -14,13 +14,13 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://cdn.pixabay.com/photo/2016/05/27/08/51/mobile-phone-1419275_1280.jpg" class="d-block w-100" alt="...">
+        <img src="https://tmluxury.vn/wp-content/uploads/banner-do-shop-thoi-trang-nam-tphcm-tmluxury.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://cdn.pixabay.com/photo/2016/09/01/19/53/pocket-watch-1637396_1280.jpg" class="d-block w-100" alt="...">
+        <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/7136/bn/Banner%20%C4%90%E1%BB%93%20Nam.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://cdn.pixabay.com/photo/2020/04/19/21/18/prairie-5065663_1280.jpg" class="d-block w-100" alt="...">
+        <img src="https://dojeannam.com/wp-content/uploads/2017/10/banner-thoi-trang-nam-cong-so-2018.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -33,22 +33,36 @@
     </button>
   </div>
  </div>
-
-
-
+ 
+<div class="danhmuc">
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+  Mới Nhất
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+  Bán chạy nhất
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+  Khuyến Mãi
+</button>
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+  Danh mục hàng   
+</button>
+</div>
  <section id="home-section">
 <div class="container">
-  <div class="row" *ngIf="products && products.length;else elseBlock">
-    <div class="col-4" *ngFor="let product of products">
+  <div class="row row-cols-4 " *ngIf="products && products.length;else elseBlock">
+   <div class="col khung" *ngFor="let product of products">
+    <a routerLink="/product/{{product.id}}">
       <div class="card"  style="width: 18rem;">
         <div class="card-body">
           <img src="{{product.imgUrl}}" class="card-img-top" alt="...">
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">Giá :{{product.price}}</p>
-          <a href="#" class="btn btn-primary">Send mail</a>
+          <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
         </div>
       </div>
-    </div>
+    </a>
+  </div>
   </div>
   <ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>
 </div>
