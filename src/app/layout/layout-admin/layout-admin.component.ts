@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import products from 'src/app/datas/product';
 
 @Component({
   selector: 'app-layout-admin',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout-admin.component.scss']
 })
 export class LayoutAdminComponent {
-
+  products = products
 }
