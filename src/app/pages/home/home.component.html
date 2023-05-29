@@ -34,36 +34,339 @@
   </div>
  </div>
  
-<div class="danhmuc">
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-  Mới Nhất
-</button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
-  Bán chạy nhất
-</button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
-  Khuyến Mãi
-</button>
-<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
-  Danh mục hàng   
-</button>
-</div>
- <section id="home-section">
-<div class="container">
-  <div class="row row-cols-4 " *ngIf="products && products.length;else elseBlock">
-   <div class="col khung" *ngFor="let product of products">
-    <a routerLink="/product/{{product.id}}">
-      <div class="card"  style="width: 18rem;">
-        <div class="card-body">
-          <img src="{{product.imgUrl}}" class="card-img-top" alt="...">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">Giá :{{product.price}}</p>
-          <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+
+
+ <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Trending <b>Products</b></h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple iPad</h4>
+                    <p class="item-price">$400.00 <span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://mcdn.coolmate.me/image/July2021/quan-ao-the-thao-nam-dep-nike.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Sony Headphone</h4>
+                    <p class="item-price">$25.00 <span>$23.99</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-0.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Macbook Air</h4>
+                    <p class="item-price">$899.00 <span>$649.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>								
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-0.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Nikon DSLR</h4>
+                    <p class="item-price">$315.00 <span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://salt.tikicdn.com/cache/w1200/ts/product/fc/4e/ee/5de82c740b1fe3d70296821837eb7a7f.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Sony Play Station</h4>
+                    <p class="item-price">$289.00 <span>$269.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Macbook Pro</h4>
+                    <p class="item-price">$1099.00 <span>$869.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://salt.tikicdn.com/cache/w1200/ts/product/fc/4e/ee/5de82c740b1fe3d70296821837eb7a7f.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Bose Speaker</h4>
+                    <p class="item-price">$109.00 <span>$99.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Samsung Galaxy S8</h4>
+                    <p class="item-price">$599.00 <span>$569.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>						
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple iPhone</h4>
+                    <p class="item-price">$369.00 <span>$349.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Canon DSLR</h4>
+                    <p class="item-price">$315.00 <span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Google Pixel</h4>
+                    <p class="item-price">$450.00 <span>$418.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>	
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple Watch</h4>
+                    <p class="item-price">$350.00 <span>$330.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </body>
+
+
+
+
+
+<div class="row khung"  *ngIf="products && products.length;else elseBlock">
+    
+  <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+    <a routerLink="/product/{{product.id}}">
+      <div class="product-grid new">
+          <div class="product-image">
+              <a href="#" class="image">
+                <img src="{{product.imgUrl}}" class="card-img-top" alt="...">
+              </a>
+              <span class="product-new-label">New</span>
+              <ul class="product-links">
+                  <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                  <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                  <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+              </ul>
+              <div class="price">$23.00</div>
+          </div>
+          <div class="product-content">
+              <h3 class="title"><a href="#">Women's Top</a></h3>
+
+              <div class="star-rating">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                </ul>
+              </div>
+          </div>
+        
       </div>
     </a>
   </div>
-  </div>
-  <ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>
+  
 </div>
-</section>
+
+<ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>

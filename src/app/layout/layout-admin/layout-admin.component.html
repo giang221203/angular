@@ -1,42 +1,14 @@
 <app-header-admin></app-header-admin>
 <div class="container-fluid">
     <div class="row">
+        
         <div class="col-3 menu">
             <!-- As a link -->
 
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="dashboard">Dashboard</a>
-    </div>
-  </nav>
-  
-  <!-- As a heading -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="product">Product</a>
-    </div>
-  </nav>
+<app-sidebar-admin></app-sidebar-admin>
         </div>
         <div class="col-8">
             <main>              
-<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body"  *ngIf="products && products.length">
-        <tr *ngFor="let product of products" class="sp">
-            <td><img src="{{product.imgUrl}}" alt=""></td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.description }}</td>
-        </tr>
-    </ng-template>
-</p-table>
 <router-outlet></router-outlet>
             </main>
         </div>

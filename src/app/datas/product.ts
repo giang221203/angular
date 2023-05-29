@@ -7,7 +7,7 @@ const products: Product[] = [
       price: 200,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://routine.vn/media/catalog/product/cache/5de180fdba0e830d350bd2803a0413e8/e/c/ecom.21.10_232__1.jpg',
+      'https://tcorder.vn/wp-content/uploads/2014/06/quan-ao-the-thao-doi-2.jpg', 
     },
     {
       id: '2',
@@ -15,7 +15,7 @@ const products: Product[] = [
       price: 300,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://pos.nvncdn.net/be3159-662/ps/20220610_LL9DsoP9QvQuxTNmB5ane7UR.jpg',
+      'https://mcdn.coolmate.me/image/July2021/quan-ao-the-thao-nam-dep-nike.jpg',
     },
     {
       id: '3',
@@ -23,48 +23,44 @@ const products: Product[] = [
       price: 400,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://product.hstatic.net/1000344772/product/kx-41_1600__5__7122ccabec164ff4a14093e5b13fc350_master.jpg',
+      'https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-0.jpg',
     },
     {
-      id: '1',
+      id: '4',
       name: 'Ao khoac',
       price: 200,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://routine.vn/media/catalog/product/cache/5de180fdba0e830d350bd2803a0413e8/e/c/ecom.21.10_232__1.jpg',
-    },
+      'https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-0.jpg',    },
     {
-      id: '2',
+      id: '5',
       name: 'Quan',
       price: 300,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://pos.nvncdn.net/be3159-662/ps/20220610_LL9DsoP9QvQuxTNmB5ane7UR.jpg',
-    },
+      'https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-2.jpg',    },
     {
-      id: '3',
+      id: '6',
       name: 'Vest',
       price: 400,
       description: 'Mo ta cho san pham',
       imgUrl:
-        'https://product.hstatic.net/1000344772/product/kx-41_1600__5__7122ccabec164ff4a14093e5b13fc350_master.jpg',
-    },
-    {
-      id: '2',
-      name: 'Quan',
-      price: 300,
-      description: 'Mo ta cho san pham',
-      imgUrl:
-        'https://pos.nvncdn.net/be3159-662/ps/20220610_LL9DsoP9QvQuxTNmB5ane7UR.jpg',
-    },
-    {
-      id: '3',
-      name: 'Vest',
-      price: 400,
-      description: 'Mo ta cho san pham',
-      imgUrl:
-        'https://product.hstatic.net/1000344772/product/kx-41_1600__5__7122ccabec164ff4a14093e5b13fc350_master.jpg',
-    },
+      'https://salt.tikicdn.com/cache/w1200/ts/product/fc/4e/ee/5de82c740b1fe3d70296821837eb7a7f.jpg',    },
+      {
+        id: '7',
+        name: 'Quan',
+        price: 300,
+        description: 'Mo ta cho san pham',
+        imgUrl:
+        'https://aothudong.com/upload/product/atd-345/bo-quan-ao-the-thao-gio-navy-nam-2.jpg',    },
+      {
+        id: '8',
+        name: 'Vest',
+        price: 400,
+        description: 'Mo ta cho san pham',
+        imgUrl:
+        'https://salt.tikicdn.com/cache/w1200/ts/product/fc/4e/ee/5de82c740b1fe3d70296821837eb7a7f.jpg',    },
+
   ];
   
   export default products;

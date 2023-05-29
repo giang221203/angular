@@ -19,7 +19,7 @@ const routes: Routes = [
 children:[
   {path:'',redirectTo:'dashboard',pathMatch:'full'},
   {path:'dashboard',component:DashboardComponent},
-  {path:'products',component:ProductComponent},
+  {path:'product',component:ProductComponent},
 ],
 },
   
@@ -31,11 +31,13 @@ children:[
     {path:'product/:id',component:ProductDetailComponent},
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
+    {path:'about',component:AboutComponent},
+    {
+      path:'**',component:NotfoundComponent,
+      }
   ]
 },
-  {
-    path:'**',component:NotfoundComponent,
-  }
+  
 ];
 
 @NgModule({

@@ -1,19 +1,18 @@
-
-<p-table [tableStyle]="{ 'min-width': '50rem' }">
+<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
-            <th>Code</th>
+            <th>Image</th>
             <th>Name</th>
             <th>Category</th>
             <th>Quantity</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
-        <tr>
-            <td>{{ product.code }}</td>
+    <ng-template pTemplate="body"  *ngIf="products && products.length">
+        <tr *ngFor="let product of products" class="sp">
+            <td><img src="{{product.imgUrl}}" alt=""></td>
             <td>{{ product.name }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.quantity }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.description }}</td>
         </tr>
     </ng-template>
 </p-table>

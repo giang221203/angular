@@ -24,6 +24,12 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { TableModule } from 'primeng/table';
 import { ScrollerModule } from 'primeng/scroller';
+import {StyleClassModule} from 'primeng/styleclass';
+
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +56,12 @@ import { ScrollerModule } from 'primeng/scroller';
     BrowserAnimationsModule,
     FormsModule,
     TableModule,
-    ScrollerModule
+    ScrollerModule,
+    StyleClassModule,
+    CheckboxModule,
+    InputTextModule,
+    RadioButtonModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

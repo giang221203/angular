@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import products from 'src/app/datas/product';
 
 @Component({
   selector: 'app-product',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-
+    products = products
 }
