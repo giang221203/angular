@@ -10,7 +10,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { AboutComponent } from './pages/about/about.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ServicesComponent } from './pages/services/services.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
@@ -20,16 +19,22 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { ProductComponent } from './pages/admin/product/product.component';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { TableModule } from 'primeng/table';
 import { ScrollerModule } from 'primeng/scroller';
 import {StyleClassModule} from 'primeng/styleclass';
-
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { PaginatorModule } from 'primeng/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,6 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CategoryComponent,
     AboutComponent,
     RegisterComponent,
-    ServicesComponent,
     NotfoundComponent,
     LayoutAdminComponent,
     LayoutComponent,
@@ -48,7 +52,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     SidebarAdminComponent,
     ProductComponent,
     ProductDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -61,9 +68,13 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CheckboxModule,
     InputTextModule,
     RadioButtonModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    PaginatorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

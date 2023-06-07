@@ -1,0 +1,32 @@
+{
+  "signupUser": [
+    {
+      "fullname": "Nguyễn Đình Giang",
+      "email": "giangnguyen22122003@gmail.com",
+      "password": "giang211103",
+      "mobile": "0379245167",
+      "id": 1
+    },
+    {
+      "fullname": "giang ",
+      "email": "giang@gmail.com",
+      "password": "giang221203",
+      "mobile": "352",
+      "id": 2
+    },
+    {
+      "fullname": "giang ",
+      "email": "giang@gmail.com",
+      "password": "123",
+      "mobile": "23132",
+      "id": 3
+    },
+    {
+      "fullname": "giang",
+      "email": "g@gmail.com",
+      "password": "1234",
+      "mobile": "037294234",
+      "id": 4
+    }
+  ]
+}

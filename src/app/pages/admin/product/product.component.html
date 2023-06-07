@@ -1,18 +1,26 @@
-<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+
+<a routerLink= "/admin/product/add"   class="btn btn-primary">Add</a><br/><br>
+<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }" [rows]="5" [paginator]="true">
     <ng-template pTemplate="header">
         <tr>
             <th>Image</th>
             <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Action</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body"  *ngIf="products && products.length">
-        <tr *ngFor="let product of products" class="sp">
-            <td><img src="{{product.imgUrl}}" alt=""></td>
+    <ng-template pTemplate="body" let-product>
+        <tr class="sp">
+            <td><img src="{{product.images}}" alt=""></td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
             <td>{{ product.description }}</td>
+            <td>
+                <button class="m-3 btn btn-sm btn-danger" (click)="removeItem(product._id)" >Remove</button>
+                <a routerLink="/admin/product/{{product._id}}/update" class="btn btn"><button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button></a>
+                
+            </td>
         </tr>
     </ng-template>
 </p-table>
