@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit{
       if(user){
         alert("Đăng nhập thành công!");
         this.loginForm.reset();
-        this.router.navigateByUrl("/admin/product")
+        this.router.navigateByUrl("/home")
       }else{
         alert("User not found")
       }

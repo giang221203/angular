@@ -8,24 +8,27 @@
       "id": 1
     },
     {
-      "fullname": "giang ",
-      "email": "giang@gmail.com",
-      "password": "giang221203",
-      "mobile": "352",
+      "fullname": "Giang nguyen",
+      "email": "giangnguyen@gmail.com",
+      "password": "1234567",
+      "mobile": "0964661815",
+      "confirmpassword": "1234567",
       "id": 2
     },
     {
       "fullname": "giang ",
-      "email": "giang@gmail.com",
-      "password": "123",
-      "mobile": "23132",
+      "email": "wer@gmail.com",
+      "password": "giang1111",
+      "mobile": "were",
+      "confirmpassword": "giang1111",
       "id": 3
     },
     {
-      "fullname": "giang",
-      "email": "g@gmail.com",
-      "password": "1234",
-      "mobile": "037294234",
+      "fullname": "giang122",
+      "email": "b@gmail.com",
+      "password": "12345678",
+      "mobile": "0379265824",
+      "confirmpassword": "12345678",
       "id": 4
     }
   ]

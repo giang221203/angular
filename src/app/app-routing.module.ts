@@ -13,6 +13,8 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ThanhtoanComponent } from './pages/thanhtoan/thanhtoan.component';
 
 const routes: Routes = [
   // Ứng dụng phía máy chủ: (admin)
@@ -32,9 +34,11 @@ children:[
     {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home',component:HomeComponent},
     {path:'product/:id',component:ProductDetailComponent},
-    {path:'login',component:LoginComponent},
-    {path:'register',component:RegisterComponent},
+    {path:'user/login',component:LoginComponent},
+    {path:'user/register',component:RegisterComponent},
     {path:'about',component:AboutComponent},
+    {path:'cart',component:CartComponent},
+    {path:'payment',component:ThanhtoanComponent}
    
   ]
 },

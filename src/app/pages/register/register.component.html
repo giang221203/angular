@@ -1,32 +1,79 @@
 <body>
-<div class="signup-form">
-    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
-		<h2>Sign Up</h2>
-		<p>Please fill in this form to create an account!</p>
-		<hr>
-        <div class="form-group">
-			<div class="row">
-				<div class="col"><input type="text" class="form-control" formControlName="fullname" placeholder=" Name" required="required"></div>
-				<span *ngIf="user && user.invalid">Bạn cần nhập vào email </span>
-				<div class="col"><input type="text" class="form-control"formControlName="mobile" placeholder="Mobile" required="required"></div>
-			</div>        	
-        </div>
-        <div class="form-group">
-        	<input type="email" class="form-control" formControlName="email" placeholder="Email" required="required">
-        </div>
-		<div class="form-group">
-            <input type="password" class="form-control" formControlName="password" placeholder="Password" required="required">
-        </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-        </div>        
-        <div class="form-group">
-			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-		</div>
-		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
-        </div>
-    </form>
-	<div class="hint-text">Already have an account? <a  routerLink="/login">Login here</a></div>
-</div>
+	<div class="signup-form">
+		<form [formGroup]="signupForm" (ngSubmit)="signUp()">
+			<h2>Sign Up</h2>
+			<p>Please fill in this form to create an account!</p>
+			<hr>
+			<div class="form-group">
+				<div class="row">
+					<div class="col"><input type="text" class="form-control" formControlName="fullname"
+							placeholder=" Name" required="required"></div>
+					<div *ngIf="
+				signupForm.get('fullname')?.hasError('required') &&
+					(signupForm.get('fullname')?.touched ||
+					signupForm.get('fullname')?.dirty)
+				" class="text-danger">
+						Name is required
+					</div>
+					<div class="col"><input type="text" class="form-control" formControlName="mobile"
+							placeholder="Mobile" required="required"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" formControlName="email" placeholder="Email"
+					required="required">
+				<div *ngIf="
+			signupForm.get('email')?.hasError('required') &&
+                (signupForm.get('email')?.touched ||
+				signupForm.get('email')?.dirty)
+            " class="text-danger">
+					Email is required
+				</div>
+				<div *ngIf="
+			signupForm.get('email')?.hasError('email') &&
+                (signupForm.get('email')?.touched ||
+				signupForm.get('email')?.dirty)
+            " class="text-danger">
+					Email invalid
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" formControlName="password" placeholder="Password"
+					required="required">
+				<div *ngIf="
+                signupForm.get('password')?.hasError('required') &&
+                (signupForm.get('password')?.touched ||
+                    signupForm.get('password')?.dirty)
+            " class="text-danger">
+					Password is required
+				</div>
+				<div *ngIf="
+                signupForm.get('password')?.hasError('minlength') &&
+                (signupForm.get('password')?.touched ||
+                    signupForm.get('password')?.dirty)
+            " class="text-danger">
+					Min 6 characters
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" formControlName="confirmpassword"
+					placeholder="Confirm Password" required="required">
+				<div *ngIf="
+                signupForm?.hasError('notMatch') &&
+                (signupForm.get('confirmpassword')?.touched ||
+                    signupForm.get('confirmpassword')?.dirty)
+            " class="text-danger">
+					Password not same
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a
+						href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+			</div>
+		</form>
+		<div class="hint-text">Already have an account? <a routerLink="/user/login">Login here</a></div>
+	</div>
 </body>

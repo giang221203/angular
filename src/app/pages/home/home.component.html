@@ -10,31 +10,6 @@
       </div>
 </section>
  -->
- <div class="">
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item ">
-        <img src="https://tmluxury.vn/wp-content/uploads/banner-do-shop-thoi-trang-nam-tphcm-tmluxury.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item active">
-        <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/7136/bn/Banner%20%C4%90%E1%BB%93%20Nam.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://dojeannam.com/wp-content/uploads/2017/10/banner-thoi-trang-nam-cong-so-2018.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
- </div>
- 
-
 
  <body>
   <div class="container">
@@ -157,7 +132,7 @@
                         <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                       </ul>
                     </div>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    <a href="#" class="btn btn-primary" >Add to Cart</a>
                   </div>						
                 </div>
               </div>
@@ -330,12 +305,17 @@
 
 
 
-
+  <!-- <div class="h-search-form">
+    <form class="">
+      <input class="form-control" type="text" (keyup)="search()" id="search" [ngModel]="searchText" (ngModelChange)="searchKey($event)" placeholder="Type Your Keyboard..." aria-label="Search" ngModel>
+      <button type="text"><img src="https://cdn-icons-png.flaticon.com/128/149/149852.png" alt=""></button>
+    </form>
+  </div> -->
 
 <div class="row khung"  *ngIf="products && products.length;else elseBlock">
     
-  <div class="col-md-3 col-sm-6" *ngFor="let product of products ">
-    <a routerLink="/product/{{product._id}}">
+  <div class="col-md-3 col-sm-6" *ngFor="let product of products  | paginate :{itemsPerPage:4,currentPage:p}">
+ 
       <div class="product-grid new">
           <div class="product-image">
               <a href="#" class="image">
@@ -343,9 +323,11 @@
               </a>
               <span class="product-new-label">New</span>
               <ul class="product-links">
+                <a routerLink="/product/{{product._id}}">
                   <li><a href="#" data-tip="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                  <li><a  routerLink="/about" data-tip="Add to Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                  </a>
+                  <li><a data-tip="Add to Cart" (click)=" onAddTocart(product)"><i class="fa fa-shopping-bag"></i></a></li>
               </ul>
               <div class="price">{{product.price}}</div>
           </div>
@@ -364,14 +346,14 @@
           </div>
         
       </div>
-    </a>
+    
   </div>
   
 </div>
 
 <ng-template #elseBlock>Không tìm thấy sản phẩm!</ng-template>
-
-
-<div class="card flex justify-content-center">
-  <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+<div  class="phantrang">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+
+

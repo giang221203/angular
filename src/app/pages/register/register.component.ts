@@ -7,29 +7,38 @@ import {Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit{
-  public signupForm !: FormGroup;
+export class RegisterComponent {
 
+  signupForm = this.formBuilder.group({
+    fullname :['', [Validators.required]],
+    email : ['', [Validators.required, Validators.email]],
+    password : ['', [Validators.required, Validators.minLength(6)]],
+    mobile : ['', [Validators.required]],
+    confirmpassword:['', [Validators.required]]
+   }, { validators: this.checkPassword })
+   
   constructor (private formBuilder : FormBuilder,private http :HttpClient,private router :Router){}
 
- ngOnInit(): void {
-   this.signupForm = this.formBuilder.group({
-    fullname :new FormControl ('',[Validators.required]),
-    email : [''],
-    password : [''],
-    mobile : [''],
-   })
- }
+ 
+ checkPassword(form: FormGroup) {
+  const password = form.get('password')?.value;
+  const confirmPassword = form.get('confirmpassword')?.value;
+  if (password === confirmPassword) return null
+  return { notMatch: true }
+}
  signUp(){
-  this.http.post<any>("http://localhost:3000/signupUser",this.signupForm.value)
-  .subscribe(res =>{
-    alert("Đăng ký thành công");
-    this.signupForm.reset();
-    this.router.navigateByUrl("login")
-  },err =>{
-    alert("Lỗi server")
+  if(this.signupForm.valid){
+    this.http.post<any>("http://localhost:3000/signupUser",this.signupForm.value)
+    .subscribe(res =>{
+      alert("Đăng ký thành công");
+      this.signupForm.reset();
+      this.router.navigateByUrl("user/login")
+    },err =>{
+      alert("Lỗi server")
+    }
+    )
   }
-  )
+ 
  }
  get user(){
   return this.signupForm.get('fullname');

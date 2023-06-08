@@ -32,9 +32,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './pages/admin/add-product/add-product.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { PaginatorModule } from 'primeng/paginator';
+import { CartComponent } from './pages/cart/cart.component';
+import { AvatarModule } from 'primeng/avatar';
+import { BadgeModule } from 'primeng/badge';
+import { ThanhtoanComponent } from './pages/thanhtoan/thanhtoan.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +62,8 @@ import { PaginatorModule } from 'primeng/paginator';
     DashboardComponent,
     AddProductComponent,
     UpdateProductComponent,
+    CartComponent,
+    ThanhtoanComponent,
    
   ],
   imports: [
@@ -71,7 +80,11 @@ import { PaginatorModule } from 'primeng/paginator';
     ButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    PaginatorModule
+    PaginatorModule,
+    NgxPaginationModule,
+    AvatarModule,
+    BadgeModule,
+    NgxPayPalModule
     
   ],
   providers: [],

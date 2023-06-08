@@ -32,4 +32,33 @@ export class ProductService {
     deleteProduct(id:any): Observable<any> {
       return this.http.delete<any>(`${baseUrl}/${id}`);
     }
+    GetCarts(){
+      let cartJson = sessionStorage.getItem('cart');
+      if(cartJson){
+        return JSON.parse(cartJson)
+      }else{
+        return [];
+      }
+    }
+    saveCarts(carts :any){
+      let cartJson = JSON.stringify(carts)
+      sessionStorage.setItem('cart',cartJson)
+    }
+    getCartTotalPrice(){
+      let carts = this.GetCarts();
+      let total : number  = 0;
+      carts.forEach((item :any) => {
+        total += item.quantity * item.price;
+      });
+      return total
+    }
+
+    getCartTotalQuantity(){
+      let carts = this.GetCarts();
+      let total : number  = 0;
+      carts.forEach((item :any) => {
+        total += item.quantity;
+      });
+      return total
+    }
 }
